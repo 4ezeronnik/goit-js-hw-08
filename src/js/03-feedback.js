@@ -21,11 +21,16 @@ function onInput(evt) {
 
 function onFormSubmit(evt) {
     evt.preventDefault();
-
+    const checkedData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || '';
+    if (!checkedData.email || !checkedData.message)  {  
+        return
+}
     console.log(localStorage.getItem(STORAGE_KEY));
-
     evt.target.reset();
     localStorage.removeItem(STORAGE_KEY);
+    
+
+   
     
 }
 
